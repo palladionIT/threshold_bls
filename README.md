@@ -6,7 +6,9 @@
 
 A pairing-based threshold cryptosystem for collaborative decryption and signatures.
 
-The `threshold_crypto` crate provides cryptographic keys with methods for signing and encrypting messages, as well as key sets for _threshold_ signatures and threshold encryption.
+This is a fork from `threshold_crypto` which updates the dependencies to the newest version. Apart from that the code tries ot be as close as possible to retain the security as shown by the original security audit.
+
+The `threshold_bls` crate provides cryptographic keys with methods for signing and encrypting messages, as well as key sets for _threshold_ signatures and threshold encryption.
 
 The threshold signature scheme is described in [Threshold Signatures, Multisignatures and Blind Signatures Based on the Gap-Diffie-Hellman-Group Signature Scheme](https://www.iacr.org/archive/pkc2003/25670031/25670031.pdf) by Alexandra Boldyreva. This paper extends [Boneh-Lynn-Shacham](https://www.iacr.org/archive/asiacrypt2001/22480516.pdf) signatures to the threshold setting. Message encryption uses the [scheme by Baek and Zhang](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.119.1717&rep=rep1&type=pdf).
 Our implementation is based on the [`pairing`](https://crates.io/crates/pairing) elliptic curve library.
@@ -16,7 +18,7 @@ In a network environment, messages are signed and encrypted, and key and signatu
 
 ## Security Audit
 
-An [official security audit](https://github.com/poanetwork/wiki/wiki/Threshold-Crypto-Audit) has been completed on `threshold_crypto` by [Jean-Philippe Aumasson](https://aumasson.jp/). No exploitable security issues were found, and potential improvements have been addressed. Outdated dependencies mentioned in the audit were updated in commit [54026f5](https://github.com/poanetwork/threshold_crypto/commit/54026f5fe7e0b5a52e446ac01a50469da1f15a71).
+An [official security audit](https://github.com/poanetwork/wiki/wiki/Threshold-Crypto-Audit) has been completed on the original `threshold_crypto` by [Jean-Philippe Aumasson](https://aumasson.jp/). No exploitable security issues were found, and potential improvements have been addressed. Outdated dependencies mentioned in the audit were updated in commit [54026f5](https://github.com/poanetwork/threshold_crypto/commit/54026f5fe7e0b5a52e446ac01a50469da1f15a71).
 
 ## Usage
 
@@ -122,7 +124,7 @@ To speed up automatic tests of crates depending on `threshold_crypto`, the `use-
 
 ## License
 
-Licensed under either of:
+For now the code is essentially the same as `threshold_crypto`, meaning that the same licenses apply. However, if for any reason the work deviates from the original work to a degree that it constitutes its own work, the authors reserve the right to apply other licenses in the future. As of now, as `threshold_crypto`, the work in this repository is licensed under either of:
 
 * Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
 * MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
